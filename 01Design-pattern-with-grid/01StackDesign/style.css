@@ -72,3 +72,57 @@ h6 {
   gap: var(--gutter, 0);
   align-content: start;
 }
+
+/* inline */
+.navbar {
+  background-color: black;
+  color: white;
+}
+.circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 3, 45);
+  border-radius: 50%;
+}
+
+[data-inline-cluster] {
+  --gutter: initial;
+  display: grid;
+  gap: var(--gutter, 0px);
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+}
+
+[data-inline-cluster~="justify-center"] {
+  justify-content: center;
+}
+[data-inline-cluster~="justify-start"] {
+  justify-content: start;
+}
+[data-inline-cluster~="justify-end"] {
+  justify-content: end;
+}
+[data-inline-cluster~="justify-space-between"] {
+  justify-content: space-between;
+}
+[data-inline-cluster~="justify-space-around"] {
+  justify-content: space-around;
+}
+[data-inline-cluster~="align-start"] {
+  align-items: start;
+}
+[data-inline-cluster~="align-center"] {
+  align-items: center;
+}
+[data-inline-cluster~="align-end"] {
+  align-items: end;
+}
+
+.inline-pattern ul {
+  padding: 0;
+}
+.inline-pattern li {
+  list-style: none;
+}
