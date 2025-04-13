@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split design</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="product" style="--gutter: 2rem" data-split="fraction:1/4">
+      <img src="https://unsplash.it/640/425?random" alt="" />
+      <article class="product-details" data-stack style="--gutter: 0.5rem">
+        <header><span class="product-title">Gaming computer</span></header>
+        <p>In stock</p>
+        <div class="product-actions" data-inline-stack style="--gutter: 0.5rem">
+          <button>Buy Now</button>
+          <button>Add To Bag</button>
+          <button>Like</button>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
