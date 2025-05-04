@@ -1,0 +1,126 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+/*
+    10. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+}
+.section-subheading {
+  font-size: 2rem;
+}
+.logo {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 1rem;
+  margin-right: auto;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+[data-stack] {
+  --gutter: initial;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter, 0rem);
+}
+[data-inline-cluster] {
+  --gutter: initial;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, 0px);
+}
+
+[data-inline-cluster~="justify-content:start"] {
+  justify-content: flex-start;
+}
+[data-inline-cluster~="justify-content:center"] {
+  justify-content: center;
+}
+[data-inline-cluster~="justify-content:end"] {
+  justify-content: flex-end;
+}
+[data-inline-cluster~="justify-content:space-between"] {
+  justify-content: space-between;
+}
+
+[data-inline-cluster~="align-items:start"] {
+  align-items: flex-start;
+}
+[data-inline-cluster~="align-items:center"] {
+  align-items: center;
+}
+[data-inline-cluster~="align-items:end"] {
+  align-items: flex-end;
+}
+[data-inline-cluster~="align-items:stretch"] {
+  align-items: stretch;
+}
