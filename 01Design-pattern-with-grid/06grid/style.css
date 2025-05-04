@@ -1,0 +1,158 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+/*
+    10. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background-color: beige;
+  padding: 1rem;
+}
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card-header {
+  padding: 0rem 1rem;
+}
+
+.role {
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.25rem;
+}
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(34, 32, 32);
+  justify-self: end;
+}
+
+.card-method-email,
+.card-method-call {
+  background-color: cadetblue;
+  padding: 1rem;
+  width: 100%;
+}
+
+[data-stack] {
+  --gutter: initial;
+  display: grid;
+  gap: var(--gutter, 0px);
+  align-content: start;
+}
+
+[data-inline] {
+  --gutter: initial;
+  display: grid;
+  gap: var(--gutter, 0px);
+  grid-auto-flow: column;
+  justify-content: start;
+}
+
+[data-split] {
+  --gutter: initial;
+  display: grid;
+  gap: var(--gutter, 0px);
+}
+[data-split~="fraction:1/1"] {
+  grid-template-columns: 1fr 1fr;
+}
+
+[data-cover] {
+  --minHeight: initial;
+  display: grid;
+  min-block-size: var(--minHeight, 0vh);
+}
+[data-cover] > [cover-center] {
+  align-self: center;
+}
+
+[data-center] {
+  max-inline-size: var(--maxWidth, 100%);
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+[data-center~="center-children"] {
+  display: grid;
+  justify-content: center;
+}
+[data-center~="center-text"] {
+  text-align: center;
+}
+
+[data-grid] {
+  --minItemWidth: initial;
+  --gutter: initial;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--minItemWidth, 0px)), 1fr)
+  );
+  gap: var(--gutter, 0px);
+}
